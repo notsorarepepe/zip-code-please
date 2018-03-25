@@ -3,6 +3,6 @@
 ```shell
 
 $ yarn install
-$ npm start
+$ yarn start # or npm start
 
 ```
