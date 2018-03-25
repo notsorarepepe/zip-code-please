@@ -1,0 +1,8 @@
+{
+    "presets": [
+        "env",
+        "preact",
+        "stage-2"
+    ],
+    "plugins": []
+}

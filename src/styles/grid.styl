@@ -1,0 +1,55 @@
+
+$grid-breakpoints = {
+    xs: 0,
+    sm: 34em,
+    md: 48em,
+    lg: 62em,
+    xl: 75em
+}
+
+$one-half = 50%
+$one-third = calc(100% / 3)
+$one-quarter = 25%
+
+@one-half
+    flex-basis $one-half
+    max-width $one-half
+
+@one-third
+    flex-basis $one-third
+    max-width $one-third
+
+@one-quarter
+    flex-basis $one-quarter
+    max-width $one-quarter
+
+for $size, $bp in $grid-breakpoints
+    
+    .row
+        @media (min-width: $bp)
+            
+            &.-two-col-{$size} > *
+                @one-half
+            
+            &.-three-col-{$size} > *
+                @one-third
+            
+            &.-four-col-#{$size} > *
+                @one-quarter
+
+.row
+    display flex
+    flex-wrap wrap
+    margin-left -1rem
+    margin-right -1rem
+    
+    // border 1px solid red
+
+.col
+    flex-grow 1
+    flex-basis 100%
+    padding-left 1rem
+    padding-right 1rem
+    
+    // border 1px solid blue
+
